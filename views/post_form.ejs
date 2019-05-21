@@ -1,0 +1,27 @@
+<html>
+    <head>
+            <link rel="stylesheet" href="assets/styles.css">
+    </head>
+    <body>
+        <% include partials/nav.ejs %>
+        
+        <form id ="post_form" method="POST" action="/post_form">
+
+            <label for="name">Author's name</label>
+            <input type="text" name="name" id="" value="<%= forminput.name %>">
+
+            <label for="email">Email address of author</label>
+            <input type="email" name="email"> 
+
+            <label for="title">Title of your blog</label>
+            <input type="text" name="title" id="" value="<%= forminput.title %>">
+
+            <label for="content">Content of your blog</label>
+            <input type="text" name="content" id="" value="<%= forminput.content %>">
+  
+            <input type="file" name="image" id="file">
+
+            <input type="submit" value="submit">
+        </form>
+    </body>
+</html>

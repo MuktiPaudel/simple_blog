@@ -1,0 +1,33 @@
+<html>
+        <!-- nodemon app.js  -->
+        <!-- https://www.youtube.com/watch?v=rin7gb9kdpk&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp&index=30   -->
+    <body>
+
+      <% include partials/nav.ejs %>
+
+      <div class="container-fluid">
+          <div class="row">
+              <div style = "margin-top:7%;" class="col-sm-9">
+                <% for (let i = 0; i < data.length; i++) { %>
+                    <div style ="border-radius: 10px; padding:7%;" class="jumbotron jumbotron-fluid">
+                            <div class="container">
+                                
+                                <h2> <a href="/blogs/<%= data[i].id %>"><%=  data[i].title  %> </a></h2> 
+                                <p>Posted by <%=  data[i].name  %> </p>
+                                <p><%=  data[i].email  %> </p>
+                                <img style = "width: 90%" src="assets/images/<%=  data[i].image  %>" >
+                                <h5> <%=  data[i].content  %> </h5>     
+                             
+                            </div>
+                    </div>
+                <% } %>
+              </div>
+              <div style = "background-color:#f8f8f8" class="col-sm-3">
+                <p> Hi I am menu </p>
+              </div>
+          </div>
+
+       </div>
+            
+    </body>
+</html>

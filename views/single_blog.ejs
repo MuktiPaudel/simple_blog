@@ -1,0 +1,48 @@
+<html>
+ <body>
+    <% include partials/nav.ejs %>
+   <div class="container-fluid">
+          <div class="row">
+              <div style = "margin-top:7%;" class="col-sm-9">
+                    <div style ="border-radius: 10px; padding:7%;" class="jumbotron jumbotron-fluid">
+                            <div class="container">
+                                <%=  console.log(blog.title) %>
+                                <h2> <%=  blog.title  %> </h2> 
+                                <p>Posted by <%=  blog.name  %> </p>
+                                <p><%=  blog.email  %> </p>
+                                <img style = "width: 90%" src="/../assets/images/<%=  blog.image  %>" >
+                                <h5> <%=  blog.content  %> </h5>                                 
+                            </div>
+                    </div>
+
+                    <div style ="border-radius: 10px; padding:6% 15% 6% 15%" class="jumbotron jumbotron">
+                        <h3>Write your comment here </h3>
+                        <form class=" row form-group" id ="comment_form" method="POST" action="/comment_form"> 
+   
+                            <div class=" col-sm-6 form-group">
+                                <label for="commentor_name">Your name</label>
+                                <input type="text" class="form-control" id="#" value="<%= post_comment %>">
+                            </div>
+            
+                            <div class="col-sm-6  form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="" placeholder="Email">
+                              </div>
+                            <div class="col-sm-12 form-group">
+                                <label for="exampleFormControlTextarea1">Your comment</label>
+                                <textarea class="form-control rounded-0" id="" rows="3" value="post_comment"></textarea><br>
+                                <button type="button" value="submit" class="btn btn-success float-right">Success</button>                                 
+                            </div>  
+                           
+                        </form>
+                </div>
+                
+
+              </div>
+              <div style = "background-color:#f8f8f8" class="col-sm-3">
+                <p> Hi I am menu </p>
+              </div>
+          </div>
+       </div>            
+    </body>
+</html>

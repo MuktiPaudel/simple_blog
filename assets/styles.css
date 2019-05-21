@@ -1,0 +1,432 @@
+body {
+  font-family: "Raleway", sans-serif;
+  line-height: 1.8;
+  font-size: 16px;
+  background: #fff;
+  color: #859196;
+}
+/* @font-face {
+  font-family: Raleway;
+  src: url(assets/fonts/open-iconic/open-iconic.woff) format('woff'),
+       url(assets/fonts/open-iconic/open-iconic.ttf) format('ttf');
+} */
+
+.navbar-toggler {
+    background-color: #ffffffbf;
+    border: 1px solid #fffffffc;
+}
+header {
+  position: relative;
+  background-color: white;
+  height: 90vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  /* background-repeat: no-repeat;
+  position: fixed; */
+}
+
+/* header:after {
+  width: 120%;
+  height: 200px;
+  left: -10%;
+  background: #f2f2f2;
+  -webkit-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+  content: "";
+  position: absolute;
+  bottom: -100px;
+} */
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #111213;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+@media (pointer: coarse) and (hover: none) {
+  header {
+    background: url('images/mountain.jpg') black no-repeat center center fixed;
+  }
+  header video {
+    display: none;
+  }
+}
+
+.header-title{
+  font-size: 3.5rem;
+  font-weight: 200;
+  line-height: 1.2;
+  letter-spacing: 8px;
+}
+.subheader {
+  font-size: 1.4rem;
+  letter-spacing: 3!important;
+  color: #fda085;
+  padding: 1%!important;
+}
+.header_button{
+    font-family: 'Montserrat', sans-serif;
+    padding: .6rem 2rem;
+    font-size: 1.0rem;
+    font-weight: 100;
+    line-height: 1.5;
+    letter-spacing: 3;
+    border-radius: 25px;
+    margin-top:5%;
+    /* color: #ff6666; */
+    border-color: #ffc107;
+    background-image: linear-gradient(to left, #f6d365 0%, #fda085 51%, #f6d365 100%);
+  
+}
+.header_button:hover{
+  background-position: right center;
+  background-image: linear-gradient(to left, #fda085 51%, #f6d365 0%, #fda085 51%);
+  border:none;
+  color:white;
+}
+.bg-light {
+  background-color: #06060687!important;
+}
+.navbar-brand {
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: 1.25rem;
+  color:white!important;
+}
+/* button{
+  margin-top:100px;
+  margin-bottom: 100px;
+} */
+.navbar-light .navbar-nav .nav-link {
+  color: rgb(251, 251, 251);
+  font-weight: 100;
+  padding: 15px 20px;
+  letter-spacing: .1em;
+}
+.navbar-light .navbar-nav .active>.nav-link{
+  color:rgb(216, 175, 175);
+  letter-spacing: .1em;
+
+}
+.navbar-light .navbar-nav .nav-link:hover {
+  color:rgb(216, 175, 175);
+}
+.navbar-nav:hover{
+  text-decoration-color: rgb(216, 175, 175);
+}
+
+.sub_nav{
+  background-image: url(images/sunlight.jpg);
+}
+
+/**   Shared title styles **/ 
+ 
+.row-title {
+  margin:1% auto;
+  text-align: center;
+
+}
+
+.title{
+  letter-spacing: .1em;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #1f1d1d;
+  margin: 9% auto 5px auto;
+}
+.lead{
+  margin: 0% 20% 3% 20%;
+  text-align: center;
+}
+/**   Shared styles ends**/ 
+/**  Our services **/
+
+.row-service {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+  background-color:#f2f2f2 !important;
+  padding: 0% 4% 9% 4%;
+}
+
+/* Create four equal columns that sits next to each other */
+.column-service {
+  -ms-flex: 29%; /* IE10 */
+  flex: 29%;
+  max-width: 29%;
+  padding: 5% 4%;
+  margin: 2%;
+  background-color:white;
+  border-radius: 5px;
+  text-align:center;
+  transition: all .2s ease-in-out;
+/* -webkit-box-shadow: 1px 2px 13px -6px rgba(89,97,91,1);
+-moz-box-shadow: 1px 2px 13px -6px rgba(89,97,91,1);
+box-shadow: 1px 2px 13px -6px rgba(89,97,91,1); */
+}
+
+  .column-service:hover {
+    /* background-color:#b29a9a1f; */
+    background-color: #debcbc1f;
+    -ms-transform: scale(1.05); /* IE 9 */
+    -webkit-transform: scale(1.05); /* Safari 3-8 */
+    transform: scale(1.05); 
+      transition: transform .7s;
+  }
+
+.column-service .icon {
+  margin-bottom: 10%;
+  vertical-align: middle;
+  font-size:58px;
+  color: #2c3a39c7;
+}
+.column-service h5 {
+  color: #4c3a3a;
+}
+
+img {
+width:100%;
+}
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column-service {
+    -ms-flex: 46%;
+    flex: 46%;
+    max-width: 46%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column-service {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+.service_button{
+  border-radius: 18px;
+  padding: 8px 20px;
+}
+.service_button:hover{
+  background-position: right center;
+  background-image: linear-gradient(to left, #fda085 51%, #f6d365 0%, #fda085 51%);
+  border:none;
+  color:white;
+}
+
+/*  Banner Image section starts  */
+
+
+.banner-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("images/fish.jpg");
+  background-attachment: fixed;
+}
+
+.banner-row--bg-fixed {
+  min-height: 70vh;
+  box-shadow: none;
+  z-index: 1;
+}
+.text-component {
+  border: 10px solid white;
+  padding: 40px;
+  background-color:#0000009e;
+
+}
+.text-component h1{
+ color:white;
+ text-transform: uppercase;
+ font-size: 3.5rem;
+ font-weight: 200;
+ line-height: 1.2;
+ letter-spacing: 8px;
+
+}
+.text-component p{
+  color:white;
+  font-size: 2.1rem;
+  font-weight: 200;
+  line-height: 1.2;
+  letter-spacing: 2px;
+ 
+ }
+
+/*  Banner Image section ends  */
+
+
+
+/*** Albumn **/
+
+.row-img {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 1px;
+  margin:1% auto;
+}
+
+/* Create four equal columns that sits next to each other */
+.column-img {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 1px;
+}
+
+.column-img img {
+  margin-top: 1px;
+  vertical-align: middle;
+  width:100%;
+}
+
+.row-img .column-img img:hover {
+  -ms-transform: scale(1.05); /* IE 9 */
+  -webkit-transform: scale(1.05); /* Safari 3-8 */
+  transform: scale(1.05); 
+    transition: transform .7s;
+    background-color: #debcbc1f;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column-img {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column-img {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+
+/* .row-todo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;                  
+}
+.column-todo  > .column-todo-img{
+  background-image: url(images/sunlight.jpg);
+}
+.column-todo  > .column-todo-text{
+  background-color:blue;
+  text-align:center;
+  padding: 10%;
+} */
+
+.row-todo{
+  display: grid;
+  grid-template-columns: 1fr 1fr;  
+  margin: 15% auto 7% auto;                
+}
+.row-todo  > .img-left{
+  position: relative;
+  /* overflow: hidden; */
+  background-image: url(images/water2.png);
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  margin-left:-10%;
+}
+.row-todo  > .img-left img{
+margin: -15% auto 15%  25%; 
+z-index:11; 
+width: 90%;
+}
+
+.row-todo  > .text-right h5{
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #4c3a3a;
+  }
+/* .row-todo  > .img-left:before {
+  background-image: url(images/sunlight.jpg);
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  background-repeat: no-repeat;
+
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  
+  
+} */
+ .row-todo  > .text-right {
+  text-align: center;
+  margin: 0% 15% 0% 20%;
+}
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .row-todo {
+    display: grid;
+    grid-template-columns: 1fr; 
+  }
+  .row-todo  > .img-left{
+    display:none;
+  }
+}
+
+/* ************************ Blog section Starts ****************************
+********************************************************************** */
+
+
+
+/* ************************ Blog section Ends ****************************
+********************************************************************** */
