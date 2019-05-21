@@ -11,7 +11,6 @@ app.set('view engine', 'ejs');
 app.use ('/assets', express.static('assets'));
 app.use(fileUpload());
 
-app.use(express.static(__dirname + '/public'));
 
 app.get ('/', function(req, res){
     res.render('index');
@@ -67,17 +66,18 @@ app.get("/blogs/:single_blog", (req, res, next) => {
 
 /*  All the comments posted from the "single_blog.ejs" comment form are handled here  */
 
-app.post ('/single_blog', urlencodedParser, function(req, res){
+app.post ('/comment_form', urlencodedParser, function(req, res){
     // renders the posted data to blogs page
     let temp_comments = (req.body);
+    console.log(temp_comments);
     const jsonData = fs.readFileSync("./commentstore.json","utf-8");
     let jsonObj = JSON.parse(jsonData);
     // temp_comments.id = new Date();  ?????????
     // console.log(jsonObj)
-    const comments = [...jsonObj.blogs,temp_comments];
+    const comments = [...jsonObj.comments,temp_comments];
     jsonObj.comments = comments;
     let CommentsJsonStringified = JSON.stringify(jsonObj, null, 2);
-    // console.log(jsonStringified)
+    console.log(CommentsJsonStringified);
     fs.writeFile('commentstore.json', CommentsJsonStringified, (err) =>{
         if(err) throw err;
         console.log('data written to file');
@@ -97,6 +97,7 @@ app.post ('/post_form', urlencodedParser, function(req, res){
     const jsonData = fs.readFileSync("./blogstore.json","utf-8");
     let jsonObj = JSON.parse(jsonData);
     tempdata.id = new Date();
+    tempdata.date = new Date();
     // console.log(jsonObj)
     const blogs = [...jsonObj.blogs,tempdata];
     jsonObj.blogs = blogs;

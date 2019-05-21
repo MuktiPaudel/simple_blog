@@ -3,10 +3,10 @@
     <% include partials/nav.ejs %>
    <div class="container-fluid">
           <div class="row">
-              <div style = "margin-top:7%;" class="col-sm-9">
+              <div style = "margin-top:2%;" class="col-sm-9">
                     <div style ="border-radius: 10px; padding:7%;" class="jumbotron jumbotron-fluid">
                             <div class="container">
-                                <%=  console.log(blog.title) %>
+
                                 <h2> <%=  blog.title  %> </h2> 
                                 <p>Posted by <%=  blog.name  %> </p>
                                 <p><%=  blog.email  %> </p>
@@ -20,19 +20,21 @@
                         <form class=" row form-group" id ="comment_form" method="POST" action="/comment_form"> 
    
                             <div class=" col-sm-6 form-group">
-                                <label for="commentor_name">Your name</label>
-                                <input type="text" class="form-control" id="#" value="<%= post_comment %>">
+                                <label for="name">Your name</label>
+                                <input type="text" class="form-control" name="commentor_name">
                             </div>
             
                             <div class="col-sm-6  form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="" placeholder="Email">
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" name="commentor_email">
                               </div>
                             <div class="col-sm-12 form-group">
-                                <label for="exampleFormControlTextarea1">Your comment</label>
-                                <textarea class="form-control rounded-0" id="" rows="3" value="post_comment"></textarea><br>
-                                <button type="button" value="submit" class="btn btn-success float-right">Success</button>                                 
+                                <label for="comment">Your comment</label>
+                                <textarea class="form-control rounded-0" rows="3" name="commentor_comment"></textarea><br>
+
+                                                               
                             </div>  
+                            <button type="submit" value="submit" class="btn btn-success float-right">Send</button> 
                            
                         </form>
                 </div>

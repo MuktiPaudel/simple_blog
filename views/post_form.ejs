@@ -1,27 +1,40 @@
+
 <html>
-    <head>
-            <link rel="stylesheet" href="assets/styles.css">
-    </head>
-    <body>
-        <% include partials/nav.ejs %>
+        <head>
+                <link rel="stylesheet" href="assets/styles.css">
+        </head>
+        <body>
+            <% include partials/nav.ejs %>
+ 
+
+            <div style ="border-radius: 10px; padding:6% 15% 6% 15%" class="jumbotron jumbotron">
+                    <h3>Write your post here </h3> <br>
+                    <form class=" row form-group" id ="post_form" method="POST" action="/post_form"> 
+
+                        <div class=" col-sm-6 form-group">
+                            <label for="name">Author's name</label>
+                            <input type="text" class="form-control" name="name">
+                        </div>
         
-        <form id ="post_form" method="POST" action="/post_form">
+                        <div class="col-sm-6  form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" name="email">
+                          </div>
+                        <div class="col-sm-12 form-group">
+                            <label for="comment">Title</label>
+                            <textarea class="form-control rounded-0" rows="1" name="title"></textarea>                                                         
+                        </div>  
+                        <div class="col-sm-12 form-group">
+                                <label for="comment">Your post</label>
+                                <textarea class="form-control rounded-0" rows="6" name="content"></textarea><br>  
+                                
+                                <button type="submit" value="submit" class="btn btn-success float-right">Send</button> 
+                       
+                        </div> 
+                        
+                    </form>
+            </div>
 
-            <label for="name">Author's name</label>
-            <input type="text" name="name" id="" value="<%= forminput.name %>">
-
-            <label for="email">Email address of author</label>
-            <input type="email" name="email"> 
-
-            <label for="title">Title of your blog</label>
-            <input type="text" name="title" id="" value="<%= forminput.title %>">
-
-            <label for="content">Content of your blog</label>
-            <input type="text" name="content" id="" value="<%= forminput.content %>">
-  
-            <input type="file" name="image" id="file">
-
-            <input type="submit" value="submit">
-        </form>
-    </body>
-</html>
+        </div>
+        </body>
+    </html>
