@@ -1,10 +1,59 @@
-<div style ="border-radius: 10px; padding:7%;" class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <%=  console.log(blog.title) %>
-        <h2> <%=  blog.title  %> </h2> 
-        <p>Posted by <%=  blog.name  %> </p>
-        <p><%=  blog.email  %> </p>
-        <img style = "width: 90%" src="/../assets/images/<%=  blog.image  %>" >
-        <h5> <%=  blog.content  %> </h5>                                 
-    </div>
-</div>
+<html>
+ <body>
+    <% include partials/nav.ejs %>
+   <div class="container-fluid">
+          <div class="row">
+              <div style = "margin-top:2%;" class="col-sm-9">
+                    <div style ="border-radius: 10px; padding:7%;" class="jumbotron jumbotron-fluid">
+                            <div class="container">
+
+                                <h2> <%=  blog.title  %> </h2> 
+                                <p>Posted by <%=  blog.name  %> </p>
+                                <p><%=  blog.email  %> </p>
+                                <img style = "width: 90%" src="/../assets/images/<%=  blog.image  %>" >
+                                <h5> <%=  blog.content  %> </h5>  
+                                <!-- <% for (let i = 0; i < blog.comments(id).length; i++) { %>
+                                   <h5><%=  blog.contents[0].name %>   </h5>
+                                <% } %>                                -->
+                            </div>
+                    </div>
+
+                    <div style ="border-radius: 10px; padding:6% 15% 6% 15%" class="jumbotron jumbotron">
+                        <h3>Write your comment here </h3>
+                        <form class=" row form-group" id ="comment_form" method="POST" action="/comment_form"> 
+   
+                            <div class=" col-sm-6 form-group">
+                                <label for="name">Your name</label>
+                                <input type="text" class="form-control" name="commentor_name">
+                            </div>
+            
+                            <div class="col-sm-6  form-group">
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" name="commentor_email">
+                              </div>
+                            <div class="col-sm-12 form-group">
+                                <label for="comment">Your comment</label>
+                                <textarea class="form-control rounded-0" rows="3" name="commentor_comment"></textarea><br>
+
+                                                               
+                            </div>  
+                            <button type="submit" value="submit" class="btn btn-success float-right">Send</button> 
+                           
+                        </form>
+                </div>
+                
+
+              </div>
+              <div style = "background-color:#f8f8f8" class="col-sm-3">
+                <p> Hi I am menu </p>
+              </div>
+          </div>
+       </div>            
+    </body>
+</html>
+
+
+<!-- comments page does not actually exist, this call is only for the
+reason to get data from the file if it exists or in case it does
+not, return an empty object in the expected form (see loadComments
+in public/js/blog.js) -->

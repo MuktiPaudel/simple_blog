@@ -7,24 +7,35 @@
 
       <div class="container-fluid">
           <div class="row">
-              <div style = "margin-top:7%;" class="col-sm-9">
+              <div style = "margin-top:2%;" class="col-sm-9">
                 <% for (let i = 0; i < data.length; i++) { %>
                     <div style ="border-radius: 10px; padding:7%;" class="jumbotron jumbotron-fluid">
                             <div class="container">
                                 
-                                <h2> <a href="/blogs/<%= data[i].id %>"><%=  data[i].title  %> </a></h2> 
-                                <p>Posted by <%=  data[i].name  %> </p>
-                                <p>on <%=  data[i].date  %> </p>
-                                <p><%=  data[i].email  %> </p>
+                                <h2 class="blog_title"> <a href="/blogs/<%= data[i].id %>"><%=  data[i].title  %> </a></h2> 
+                                <p class="inline">Posted by <span class="author"><%=  data[i].name  %> </span></p>
+                                <p class="inline">on <%=  data[i].date  %> </p>
                                 <img style = "width: 90%" src="assets/images/<%=  data[i].image  %>" >
-                                <h5> <%=  data[i].content  %> </h5>     
-                             
+                                <h5 class ="blog_content"> <%=  data[i].content  %> </h5>                                 
                             </div>
                     </div>
                 <% } %>
               </div>
               <div style = "background-color:#f8f8f8" class="col-sm-3">
-                <p> Hi I am menu </p>
+
+                  <div style ="border-radius: 10px; margin-top:10%;" class="jumbotron jumbotron-fluid">
+                
+                          <div class="container">
+
+                      <h2> Recent Posts</h2> <br>
+                              <% for (let i = 0; i < data.length; i++) { %> 
+                              <h5> <a href="/blogs/<%= data[i].id %>"><%=  data[i].title  %> </a></h5> 
+                              <p>Posted by <%=  data[i].name  %> </p>    
+                              <% } %>                             
+                          </div>
+                    
+                  </div>
+             
               </div>
           </div>
 

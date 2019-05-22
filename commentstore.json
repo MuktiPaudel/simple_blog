@@ -7,14 +7,34 @@
       "commentor_comment": "This is the comment"
     },
     {
-      "commentor_name": "Mukti Narayan Paudel",
-      "commentor_email": "muktinarayan.paudel@gmail.com",
-      "commentor_comment": "nkdf m,sdf d"
+      "commentor_name": "abc",
+      "commentor_email": "abc@test.com",
+      "commentor_comment": "this is the test comment"
     },
     {
-      "commentor_name": "NAMITA KHANAL PAUDEL",
-      "commentor_email": "paudel.namita@gmail.com",
-      "commentor_comment": "dfdcdscd"
+      "commentor_name": "NEPGO",
+      "commentor_email": "nepgo@emai.com",
+      "commentor_comment": "dear comment I am here"
+    },
+    {
+      "commentor_name": "NEPGO",
+      "commentor_email": "nepgo@emai.com",
+      "commentor_comment": "dear comment I am here"
+    },
+    {
+      "commentor_name": "test",
+      "commentor_email": "test.test@gmail.com",
+      "commentor_comment": "hi"
+    },
+    {
+      "commentor_name": "hi there",
+      "commentor_email": "test.test@gmail.com",
+      "commentor_comment": "this is the test message"
+    },
+    {
+      "commentor_name": "testing test",
+      "commentor_email": "test.test@gmail.com",
+      "commentor_comment": "testing test testing test"
     }
   ]
 }
