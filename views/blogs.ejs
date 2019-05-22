@@ -15,7 +15,7 @@
                                 <h2 class="blog_title"> <a href="/blogs/<%= data[i].id %>"><%=  data[i].title  %> </a></h2> 
                                 <p class="inline">Posted by <span class="author"><%=  data[i].name  %> </span></p>
                                 <p class="inline">on <%=  data[i].date  %> </p>
-                                <img style = "width: 90%" src="assets/images/<%=  data[i].image  %>" >
+                                <img style = "width: 100%" src="assets/images/<%=  data[i].image  %>" >
                                 <h5 class ="blog_content"> <%=  data[i].content  %> </h5>                                 
                             </div>
                     </div>
@@ -27,7 +27,7 @@
                 
                           <div class="container">
 
-                      <h2> Recent Posts</h2> <br>
+                      <h2 class ="menu_header"> Recent Posts</h2>
                               <% for (let i = 0; i < data.length; i++) { %> 
                               <h5> <a href="/blogs/<%= data[i].id %>"><%=  data[i].title  %> </a></h5> 
                               <p>Posted by <%=  data[i].name  %> </p>    
