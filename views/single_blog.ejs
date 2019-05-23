@@ -14,18 +14,18 @@
                                 <h5 class ="blog_content"> <%=  blog.content  %> </h5>                                
                             </div>
                     </div>
-            
                     <div style ="border-radius: 10px; padding:7%;" class="jumbotron jumbotron-fluid">
                             <div class="container">
                             <% for (let i = 0; i < comments.length; i++) { %> 
-
+                    
                                 <p>Posted by <%=  comments[i].commentor_name  %> </p>
                                 <p><%=  comments[i].commentor_email  %> </p>
                                 <h5> <%=  comments[i].commentor_comment  %> </h5>  
-
+                    
                             <% } %>                                 
                             </div>
                     </div>
+                  
                     
                     <div style ="border-radius: 10px; padding:6% 15% 6% 15%" class="jumbotron jumbotron">
                         <h3>Write your comment here </h3>
@@ -40,25 +40,24 @@
                                     <label for="email">Email address</label>
                                     <input type="email" class="form-control" name="commentor_email">
                                 </div>
+
                                 <div class="col-sm-12 form-group">
                                     <label for="comment">Your comment</label>
-                                    <textarea class="form-control rounded-0" rows="3" name="commentor_comment"></textarea><br>
-
-                                                                
+                                    <textarea class="form-control rounded-0" rows="3" name="commentor_comment"></textarea><br>                                                              
                                 </div>  
-                                <button type="submit" value="submit" class="btn btn-success float-right">Send</button> 
-                            
-                         </form>
-                    </div>
-
-
-              </div>
-              <div style = "background-color:#f8f8f8; margin-top:2%;" class="col-sm-3">
+                                <button type="submit" value="<%=  blog.id  %> " name = "blog_id" class="btn btn-success float-right">Send</button> 
+                        
+                            </form>
+                           
+                     </div>
+             </div>   
                 
-                <img style = "width: 100%; " src="/../assets/images/tiger.jpg" ><br>
-                <img style = "width: 100%; margin-top:3%" src="/../assets/images/green.jpg" ><br>
-              </div>
-          </div>
-       </div>            
-    </body>
+             <div style = "background-color:#f8f8f8; margin-top:2%;" class="col-sm-3">              
+                        <img style = "width: 100%; " src="/../assets/images/tiger.jpg" ><br>
+                        <img style = "width: 100%; margin-top:3%" src="/../assets/images/green.jpg" ><br>
+             </div> 
+             
+            </div> 
+        </div> 
+   </body>
 </html>

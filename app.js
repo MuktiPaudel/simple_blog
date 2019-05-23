@@ -41,26 +41,41 @@ app.get("/blogs",function(req,res) {
 });
 
 // Get the single page blog for each. 
-app.get("/blogs/:single_blog", (req, res, next) => {
+app.get("/blogs/:single_blog", (req, res) => {
     fs.exists("blogstore.json", function(exists) {
-        let obj = {};//{blogs:[]};
+        let obj = {blogs: []};//{blogs:[]};
+        let obj2 = {comments: []};
+        let blogID = ""
         if (exists) {
             const data = fs.readFileSync("blogstore.json","utf-8");
             const json = JSON.parse(data);
             for (let i = 0; i < json.blogs.length; i++) {
                 if (req.params.single_blog  == json.blogs[i].id) {
                     //obj.blogs = [...obj.blogs, json.blogs[i]];
-                    obj = json.blogs[i];
+                    obj.blogs = json.blogs[i];
+                    blogID = json.blogs[i].id
+                    // console.log(obj);
+                    break;
                     // console.log(obj);
                 }
-            }
-            // console.log(obj);
-            res.render('single_blog', {blog:obj});
-            next();
+            }         
+            const data2 = fs.readFileSync("commentstore.json","utf-8");
+            let obj3 = JSON.parse(data2);
+            for (let i = 0; i < obj3.comments.length; i++) {
+                if ( obj3.comments[i].blog_id.trim() === blogID.trim()) {
+                    obj2.comments = [...obj2.comments, obj3.comments[i]]
+                }   
+            }  
+            console.log(obj);
+            console.log(obj2);
+
+            res.render('single_blog', {
+                blog: obj.blogs,
+                comments: obj2.comments
+            });
         } else {
-            res.render('(single_blog', {blog:obj});
+            // res.render('(single_blog', {blog:obj,comments:obj2.comments});
             // console.log(blog.title);
-            next();
         }
     });
 });
@@ -77,7 +92,6 @@ app.post ('/post_form', urlencodedParser, function(req, res){
     let jsonObj = JSON.parse(jsonData);
     tempdata.id = new Date();
     tempdata.date = new Date();
-    tempdata.comments = [];
      // console.log(tempdata);
     const blogs = [...jsonObj.blogs,tempdata];
     jsonObj.blogs = blogs;
@@ -99,6 +113,7 @@ app.post ('/comment_form', urlencodedParser, function(req, res){
     // console.log(temp_comments);
     const jsonData = fs.readFileSync("./commentstore.json","utf-8");
     let jsonObj = JSON.parse(jsonData);
+    temp_comments.comment_id = new Date();
     // temp_comments.id = new Date();  ?????????
     // console.log(jsonObj)
     const comments = [...jsonObj.comments,temp_comments];
@@ -112,46 +127,47 @@ app.post ('/comment_form', urlencodedParser, function(req, res){
     res.redirect("/blogs");
 });
 
-/*  Now we are trying to get the comments from the commentstore.json file
-**/
-app.get("/comments",(req,res) => {
-    fs.exists("commentstore.json", function(exists) {
-        if (exists) {
-            let comment_data = fs.readFileSync("commentstore.json","utf-8");
-            res.send(comment_data);
-            console.log(comment_data);
-        } else {
-            let obj = {comments:[]};
-            res.send(obj);
-        }
-    });
-});
+// /*  Now we are trying to get the comments from the commentstore.json file
+// **/
+// app.get("/comments",(req,res) => {
+//     fs.exists("commentstore.json", function(exists) {
+//         if (exists) {
+//             let comment_data = fs.readFileSync("commentstore.json","utf-8");
+//              console.log("Hello there ");
+//             res.send(comment_data);
+
+//         } else {
+//             let obj = {comments:[]};
+//             res.send(obj);
+//         }
+//     });
+// });
 
 // loading only the article specific comments
-app.get("/comments/:single_blog", (req, res, next) => {
-    fs.exists("commentstore.json", function(exists) {
-        let obj = {comments:[]}; 
-        if (exists) {
-            let data = fs.readFileSync("commentstore.json","utf-8");
-            let json = JSON.parse(data);
-            console.log(json);
-            for(let i = 0; i < json.comments.length; i++) {
-                if (req.params.blogs == json.comments[i].blogs) {
-                    obj.comments = [...obj.comments, json.comments[i]];
-                }
-            }
-             // console.log(obj);
-             res.render('single_blog', {comments:obj});
-             next();
-        } else {
-            res.render('(single_blog', {comments:obj});
-             // console.log(comment.commentor_name);
-            next();
-        }
-    })
-})
+// app.get("/comments/:single_blog", (req, res) => {
+//     fs.exists("commentstore.json", function(exists) {
+//         let obj = {comments:[]}; 
+//         console.log("Hello there ");
+//         if (exists) {
+//             let data = fs.readFileSync("commentstore.json","utf-8");
+//             console.log(data);
+//             let json = JSON.parse(data);
+//             // console.log(json);
+//             for(let i = 0; i < json.comments.length; i++) {
+//                 if (req.params.single_blog == json.comments[i].blog_id) {
+//                     obj.comments = [...obj.comments, json.comments[i]];
+//                 }
+//             }
+//                 res.render('single_blog', {comments:obj.comments});
+//                //  console.log(comments);
+//         }   else {
+//                 res.render('single_blog', {comments:obj.comments});
+//                 // console.log(comment.commentor_name);
+//             }
+//     })
+// })
 
 // Listen
 app.listen(3000, () => {
-    // console.log('Server listing on 3000');
+    console.log('Server listing on 3000');
 });

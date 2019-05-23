@@ -9,7 +9,7 @@
           <div class="row">
               <div style = "margin-top:2%;" class="col-sm-9">
                 <% for (let i = 0; i < data.length; i++) { %>
-                    <div style ="border-radius: 10px; padding:7%;" class="jumbotron jumbotron-fluid">
+                    <div class="jumbotron jumbotron-fluid jumbotron_panel">
                             <div class="container">
                                 
                                 <h2 class="blog_title"> <a href="/blogs/<%= data[i].id %>"><%=  data[i].title  %> </a></h2> 
@@ -21,9 +21,9 @@
                     </div>
                 <% } %>
               </div>
-              <div style = "background-color:#f8f8f8" class="col-sm-3">
+              <div class="col-sm-3 bg_brown">
 
-                  <div style ="border-radius: 10px; margin-top:10%;" class="jumbotron jumbotron-fluid">
+                  <div  class="jumbotron jumbotron-fluid">
                 
                           <div class="container">
 

@@ -57,3 +57,17 @@
 reason to get data from the file if it exists or in case it does
 not, return an empty object in the expected form (see loadComments
 in public/js/blog.js) -->
+
+
+
+<div style ="border-radius: 10px; padding:7%;" class="jumbotron jumbotron-fluid">
+        <div class="container">
+        <% for (let i = 0; i < comments.length; i++) { %> 
+
+            <p>Posted by <%=  comments[i].commentor_name  %> </p>
+            <p><%=  comments[i].commentor_email  %> </p>
+            <h5> <%=  comments[i].commentor_comment  %> </h5>  
+
+        <% } %>                                 
+        </div>
+</div>

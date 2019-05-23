@@ -431,7 +431,10 @@ width: 90%;
 
 /* ************************ Blog section Starts ****************************
 ********************************************************************** */
-
+.jumbotron_panel{
+  border-radius: 10px;
+  padding:7%;
+}
 .inline{
   display: inline-block;
 }
